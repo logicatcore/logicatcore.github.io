@@ -1,9 +1,10 @@
 {% if site.utterances.repository and site.utterances.issue-term  %}
 
 <script src="https://utteranc.es/client.js"
-        repo="logicatcore/logicatcore.github.io"
-        issue-term="title"
-        theme="github-light"
+        repo="{{ site.utterances.repository }}"
+        issue-term="{{ site.utterances.issue-term }}"
+        theme="{{ site.utterances.theme}}"
+        label="{{ site.utterances.label}}" 
         crossorigin="anonymous"
         async>
 </script>
