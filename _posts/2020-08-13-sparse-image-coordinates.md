@@ -1,3 +1,14 @@
+---
+layout: post
+title: Finding the coordinates of non-zero pixels in sparse images/matrices
+subtitle: Smart way and dumb way
+cover-img: /assets/img/sparse_coords/intro_sparse.png
+thumbnail-img: /assets/img/sparse_coords/sparse_image.png
+share-img: /assets/img/sparse_coords/intro_sparse.png
+comments: true
+tags: [python, algorithms]
+---
+
 # Finding the coordinates of non-zero pixels in sparse images/matrices
 
 __Task:__ To determine the (row, column) values of all the non zero pixels in a matrix or an image. Typical example
