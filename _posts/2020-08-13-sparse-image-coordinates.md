@@ -2,14 +2,17 @@
 layout: post
 title: Finding the coordinates of non-zero pixels in sparse images/matrices
 subtitle: Smart way and dumb way
-cover-img: /assets/img/sparse_coords/intro_sparse.png
 thumbnail-img: /assets/img/sparse_coords/sparse_image.png
 share-img: /assets/img/sparse_coords/intro_sparse.png
 comments: true
 tags: [python, algorithms]
 ---
 
-# Finding the coordinates of non-zero pixels in sparse images/matrices
+Sparse images/matrices are those in which the contained useful information is less compared to total space being occupied. 
+
+To begin with, we will look at an example image/matrix, the output we need and the main take aways from this post.
+
+![summary image](/assets/img/sparse_coords/intro_sparse.png)
 
 __Task:__ To determine the (row, column) values of all the non zero pixels in a matrix or an image. Typical example
 would be text in a image. If you are familiar with the well known MNIST Handwritten digits dataset, that could be 
@@ -110,4 +113,4 @@ Finding non zero pixels coordinates using broadcasting took:  0.0073065757751464
 
 # Conclusions
 
-It is clear that the execution times differ significantly and the benefits become more dominant as the input data grows
+It is clear that the execution times differ significantly and the benefits become more dominant as the input data grows.
