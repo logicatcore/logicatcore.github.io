@@ -1,13 +1,13 @@
 # --- Basic options --- #
 
 # Name of website
-title: My website
+title: Scratchpad
 
 # Short description of your site
-description: A virtual proof that I'm awesome
+description: Time well spent
 
 # Your name to show in the footer
-author: Some Person
+author: Sai Sharath
 
 # --- List of links in the navigation bar --- #
 
@@ -39,12 +39,12 @@ round-avatar: true
 # If you don't want to show a link to an RSS feed, set rss to "false".
 social-network-links:
   email: "someone@example.com"
-  facebook: deanattali
-  github: daattali
-  twitter: daattali
+#  facebook: 
+  github: logicatcore
+#  twitter: daattali
   rss: true
 #  reddit: yourname
-#  linkedin: daattali
+  linkedin: saisharathk
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
