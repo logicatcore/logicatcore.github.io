@@ -96,17 +96,17 @@ plt.show()
 # Results
 ```
 sai@sai:~/****/scripts$ python coordinates.py 10 10
-sparsity: 13.0 %
+information: 13.0 %
 Finding non zero pixels coordinates with for loops took:  0.0003330707550048828  seconds
 Finding non zero pixels coordinates using broadcasting took:  3.4809112548828125e-05  seconds
 
 sai@sai:~/****/scripts$ python coordinates.py 100 100
-sparsity: 13.43 %
+information: 13.43 %
 Finding non zero pixels coordinates with for loops took:  0.024660587310791016  seconds
 Finding non zero pixels coordinates using broadcasting took:  0.00010442733764648438  seconds
 
 sai@sai:~/****/scripts$ python coordinates.py 1000 1000
-sparsity: 13.7047 %
+information: 13.7047 %
 Finding non zero pixels coordinates with for loops took:  8.874347448348999  seconds
 Finding non zero pixels coordinates using broadcasting took:  0.007306575775146484  seconds
 ```
