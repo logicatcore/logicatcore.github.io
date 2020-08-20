@@ -66,6 +66,80 @@ dragListener.bind('drop', function(event) {
 dragListener.bind('dragend', function(event) {
   console.log(event);
 });
+
+var nodes_children = 
+[1, 2, 5, 0, 0, 2, 1, 1, 3, 0, 2, 1, 3, 5, 5, 4, 4, 1, 1, 4, 5, 2, 4, 2,
+ 5, 1, 1, 4, 7, 2, 4, 4, 1, 6, 2, 3, 5, 3, 1, 5, 4, 0, 2, 5, 6, 2, 0, 0,
+ 1, 5, 4, 5, 2, 1, 3, 2, 3, 4, 4, 2, 4, 4, 5, 1, 3, 1, 1, 4, 1, 4, 3, 2,
+ 5, 3, 0, 2, 1, 0, 2, 2, 4, 3, 4, 2, 6, 2, 3, 3, 1, 1, 0, 3, 2, 4, 4, 1,
+ 1, 1, 4, 4, 5, 0, 1, 3, 4, 0, 1, 1, 4, 2, 3, 1, 1, 3, 3, 1, 4, 2, 0, 5,
+ 4, 3, 5, 1, 1, 4, 3, 2, 2, 4, 2, 1, 5, 2, 1, 2, 5, 1, 2, 3, 4, 1, 2, 3,
+ 3, 1, 4, 4, 5, 2, 7, 4, 1, 5, 0, 0, 0, 6, 1, 2, 4, 3, 1, 1, 5, 6, 5, 1,
+ 2, 3, 0, 2, 1, 7, 1, 4, 3, 3, 2, 2, 0, 1, 0, 2, 2, 4, 1, 3, 3, 2, 2, 3,
+ 1, 1, 4, 5, 4, 5, 3, 1, 2, 3, 0, 3, 2, 5, 5, 3, 3, 1, 0, 1, 3, 3, 0, 2,
+ 3, 4, 1, 1, 1]
+
+var visited_nodes =
+[ 18, 810, 595,  36, 304, 721, 403, 353, 132,   1, 788, 679, 811, 993, 519, 199, 347, 726,
+   42, 654, 791,  93, 258, 267, 937, 168, 948, 798, 216, 469,  71, 456, 492, 647, 316, 281,
+  494, 394, 785, 957, 116, 272, 323, 228, 602, 395, 881, 947, 842, 517, 662, 263, 849,  56,
+  180,  90, 259, 306, 157,  55, 471,  68, 215, 506, 108, 960,  41, 917, 554, 324, 866, 449,
+  361,  48, 640, 930, 759, 291, 741, 747, 871, 432, 362, 449, 693, 626, 898, 887, 878, 729,
+  797, 233,  94, 600, 497,  38, 556, 429, 509, 157, 502, 670, 785,  23, 860, 966, 766, 740,
+  840,  63, 217, 776, 184, 880, 536, 189, 813, 368, 947, 608, 119, 388, 980, 374, 886, 509,
+  337, 609, 989,  24,  81, 101, 179, 197, 433,  16, 608,  69, 610, 507, 509, 457, 615,  39,
+  586, 170, 326, 613, 179, 598, 817, 245, 251, 612, 414, 290, 938, 247, 222, 153, 129, 736,
+  592, 591, 896, 476, 179, 209, 130, 736, 660, 503, 461, 808, 773, 338,   8, 166, 436, 282,
+  928, 614, 670, 696, 890, 982, 479, 536, 722, 815, 261, 638, 229, 601, 990, 413, 562, 298,
+  749, 558, 690, 752, 159, 850,  97, 542, 142, 979, 313,  85, 401, 452, 106, 781, 660, 622,
+  284, 977, 678, 984, 246];
+
+var final_solution = [18, 810, 595, 132, 519,  71, 432, 246];
+async function reset(){
+    for (k = 0; k< final_solution.length - 1; k++){
+        for (j = 0; j < 1500; j++){
+            if ((s.graph.edges(j).source == final_solution[k] && s.graph.edges(j).target == final_solution[k+1]) || (s.graph.edges(j).source == final_solution[k+1] && s.graph.edges(j).target == final_solution[k])){
+                s.graph.edges(j).color = "#FF0000";
+                s.graph.edges(j).size = 2000;
+                s.refresh();
+                break;
+            }
+        }
+    }
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+//cummulative_sum_nodes
+var c_sum_nodes = 0;
+var parent_color = ""
+async function draw_paths() {
+  for (let i = 0; i < visited_nodes.length - 1; i++) {
+    parent_color = '#'+Math.floor(Math.random()*16777215).toString(16);
+    if (nodes_children[i] > 0){
+        for (childs=1 ; childs <= nodes_children[i]; childs++){
+            parent = visited_nodes[i]
+            await sleep(20);
+            for (j = 0; j < 1500; j++){
+                if ((s.graph.edges(j).source == parent && s.graph.edges(j).target == visited_nodes[c_sum_nodes+childs]) || (s.graph.edges(j).source == visited_nodes[c_sum_nodes+childs] && s.graph.edges(j).target == parent)){
+                    s.graph.edges(j).color = parent_color;
+                    s.refresh();
+                    break;
+                }
+            }
+        }
+        if (i == visited_nodes.length - 2){
+            reset();
+        }
+    c_sum_nodes += nodes_children[i];
+    }
+    else {
+        continue
+    }
+  }
+}
+//draw_paths();
 </script>
 <pre>
 
@@ -110,8 +184,26 @@ dragListener.bind('dragend', function(event) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </pre>
 <p class="has-line-data" data-line-start="1" data-line-end="2"><em>(Click the drag the nodes to interact with the graph)</em></p>
+<button onclick="draw_paths()">Click to animate</button>
 <h1 class="code-line" data-line-start=2 data-line-end=3 ><a id="Dijikstras_algorithm_2"></a>Dijikstra’s algorithm</h1>
 <p class="has-line-data" data-line-start="4" data-line-end="5">Dijkstra’s algorithm (or Dijkstra’s Shortest Path First algorithm, SPF algorithm) is an algorithm for finding the shortest paths between nodes in a graph, which may represent, for example, road networks. It was conceived by computer scientist Edsger W. Dijkstra in 1956 and published three years later.</p>
 <p class="has-line-data" data-line-start="6" data-line-end="7">This particular coding challenge deals with a single source and single destination. The algorithm states to visit the child planets in the order of least cost and keep updating the path when a route with lower cost is found.</p>
