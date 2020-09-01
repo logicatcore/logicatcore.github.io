@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: Finding the coordinates of non-zero pixels in sparse images/matrices
 subtitle: Smart way and dumb way
 thumbnail-img: /assets/img/sparse_coords/sparse_image.png
