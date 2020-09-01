@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: Topology constrained search
 subtitle: Dealing with finding factors of large numbers ~10^30
 thumbnail-img: ../assets/img/akka/ProblemExplanation.png
