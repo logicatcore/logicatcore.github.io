@@ -5,6 +5,9 @@ subtitle: Dealing with finding factors of large numbers ~10^30
 thumbnail-img: ../assets/img/akka/ProblemExplanation.png
 share-img: ../assets/img/akka/ProblemExplanation.png
 comments: true
+js: _includes/applause-button.js
+css: _includes/applause-button.css
+footer-extra: _includes/applause-button.html
 tags: [MATLAB, programming competition]
 ---
 
