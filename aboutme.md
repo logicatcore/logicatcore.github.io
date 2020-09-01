@@ -1,16 +1,23 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: Get to know me
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+# Intro
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+My name is Sai Sharath Kakubal, I am from India and am currently pursuing my Masters course at Technische Hochschule Ingolstadt, Germany in International Automotive Engineering.
 
-What else do you need?
+# Interests and skills
 
-### my history
+Having pursued Mechanical Engineering in India and having been part of designing and building a Formula Student Race car during my Bachelor's in a student team and having gotten opportunites to work as an Intern in a couple of companies has allowed me to hone my skills and build upon them progressively. My interests and skills are spread across a wide spectrum, and I especially like good presentation and like to learn new tools to complete any task in an efficient and an elegant way.
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+I am also passionate about Machine Learning and A.I fields and keep myself upto date with the latest advancements in these fields.
+
+# Programming languages that I have worked with
+
+* Python
+* Java
+* C
+* C++
+* Matlab
