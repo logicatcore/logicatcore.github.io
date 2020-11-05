@@ -7,6 +7,7 @@ share-img: /assets/img/optimization_algorithms/error_terrain.png
 comments: true
 tags: [python, machine learning, deep learning, optimization algorithms, pytorch]
 ---
+
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
@@ -13102,8 +13103,8 @@ div#notebook {
 </ol>
 <p>While all the 4 above listed algorithms differ in their own way and have certain advantages and disadvantages. They share certain similarities with the simple graddient descent algorithm. In this blog post we will go through these 4 algorithms and see how they function on minimizing the loss or finding the minima of a random error function with multiple minimas and maximas.</p>
 <hr>
-<h2 id="Error-function-with-multiple-minimas-and-maximas">Error function with multiple minimas and maximas<a class="anchor-link" href="#Error-function-with-multiple-minimas-and-maximas">&#182;</a></h2><p><em>Error Function</em> $= f(x,y) = 3 \times e^{(-(y + 1)^2 - x^2)} \times (x - 1)^2 - \frac{e^{(-(x + 1)^2 - y^2)}}{3} + e^{(-x^2 - y^2)} \times (10x^3 - 2x + 10y^5)$
-<img src="/assets/img/optimization_algorithms/error_terrain.png" alt="Error functions"></p>
+<h2 id="Error-function-with-multiple-minimas-and-maximas">Error function with multiple minimas and maximas<a class="anchor-link" href="#Error-function-with-multiple-minimas-and-maximas">&#182;</a></h2><p><em>Error Function</em> $= f(x,y) = 3 \times e^{(-(y + 1)^2 - x^2)} \times (x - 1)^2 - \frac{e^{(-(x + 1)^2 - y^2)}}{3} + e^{(-x^2 - y^2)} \times (10x^3 - 2x + 10y^5)$</p>
+<p><img src="/assets/img/optimization_algorithms/error_terrain.png" alt="Error functions"></p>
 
 </div>
 </div>
@@ -13146,7 +13147,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># To draw 3d arrows in matplotlib</span>
@@ -13169,7 +13170,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">calc_z</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">)</span><span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">:</span>
@@ -13187,11 +13188,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <span class="mi">250</span> 
-<span class="n">fps</span> <span class="o">=</span> <span class="mi">10</span>     <span class="c1"># frames per second - to save the progress in optimization as a video</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fps</span> <span class="o">=</span> <span class="mi">10</span>     <span class="c1"># frames per second - to save the progress in optimization as a video</span>
 <span class="n">Writer</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">writers</span><span class="p">[</span><span class="s1">&#39;ffmpeg&#39;</span><span class="p">]</span>
 <span class="n">writer</span> <span class="o">=</span> <span class="n">Writer</span><span class="p">(</span><span class="n">fps</span><span class="o">=</span><span class="n">fps</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">artist</span><span class="o">=</span><span class="s1">&#39;Me&#39;</span><span class="p">),</span> <span class="n">bitrate</span><span class="o">=</span><span class="mi">1800</span><span class="p">)</span>
 </pre></div>
@@ -13210,7 +13210,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
@@ -13218,61 +13218,32 @@ div#notebook {
 <span class="n">xgrid</span><span class="p">,</span> <span class="n">ygrid</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="n">zgrid</span> <span class="o">=</span> <span class="n">calc_z</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span> <span class="n">ygrid</span><span class="p">)</span>
 
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$y$&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s1">&#39;Random Loss function: &#39;</span> <span class="o">+</span> <span class="s1">&#39;$f(x, y)$&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">xgrid</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">ygrid</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">zgrid</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">ax0</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$y$&#39;</span><span class="p">)</span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s1">&#39;Random Loss function: &#39;</span> <span class="o">+</span> <span class="s1">&#39;$f(x, y)$&#39;</span><span class="p">)</span>
+<span class="n">ax0</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
+<span class="n">cs</span> <span class="o">=</span> <span class="n">ax0</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">xgrid</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">ygrid</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">zgrid</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cs</span><span class="p">)</span>
+
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+<span class="n">qcs</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">xgrid</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">ygrid</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">zgrid</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="mi">20</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">qcs</span><span class="p">)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-
-
- 
- 
-<div id="eacb805d-1485-42b4-8bbe-efa1535b5a1e"></div>
-<div class="output_subarea output_widget_view ">
-<script type="text/javascript">
-var element = $('#eacb805d-1485-42b4-8bbe-efa1535b5a1e');
-</script>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "d4511eee900f4d7ab6124319d1fe758b", "version_major": 2, "version_minor": 0}
-</script>
 </div>
-
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[8]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&lt;mpl_toolkits.mplot3d.art3d.Poly3DCollection at 0x7fbf3e11f820&gt;</pre>
-</div>
-
-</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="/assets/img/optimization_algorithms/sidebyside.jpeg" alt="side_by_side"></p>
 
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -13290,10 +13261,11 @@ var element = $('#eacb805d-1485-42b4-8bbe-efa1535b5a1e');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lr</span> <span class="o">=</span> <span class="mf">0.01</span>                                                <span class="c1"># learning rate</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">lr</span> <span class="o">=</span> <span class="mf">0.01</span>                                                <span class="c1"># learning rate</span>
 
 <span class="n">xys</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>     <span class="c1"># initialise starting point of search for minima, another possible starting position np.array([0.1, 1.4])</span>
 
@@ -13308,11 +13280,11 @@ var element = $('#eacb805d-1485-42b4-8bbe-efa1535b5a1e');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-    <span class="k">global</span> <span class="n">dy_dx_current</span><span class="p">,</span> <span class="n">xys</span><span class="p">,</span> <span class="n">lr</span><span class="p">,</span> <span class="n">new_z</span><span class="p">,</span> <span class="n">ax</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">step_gd</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">dy_dx_current</span><span class="p">,</span> <span class="n">xys</span><span class="p">,</span> <span class="n">lr</span><span class="p">,</span> <span class="n">new_z</span><span class="p">,</span> <span class="n">ax0</span><span class="p">,</span> <span class="n">ax1</span>
     <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="c1"># initialise starting point of search for minima, another possible starting position np.array([0.1, 1.4])</span>
         <span class="n">xys</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
@@ -13332,11 +13304,13 @@ var element = $('#eacb805d-1485-42b4-8bbe-efa1535b5a1e');
     <span class="n">dy_dx_current</span> <span class="o">=</span> <span class="n">xys</span><span class="o">.</span><span class="n">grad</span>
     
     <span class="n">xys_plot</span> <span class="o">=</span> <span class="n">xys</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xys_plot</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xys_plot</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">new_z</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">ax0</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xys_plot</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xys_plot</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">new_z</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">Arrow3D</span><span class="p">([</span><span class="n">cache_pt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xys_plot</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">cache_pt</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">xys_plot</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
                 <span class="p">[</span><span class="n">cache_pt</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">new_z</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()],</span> <span class="n">mutation_scale</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-                <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;-|&gt;&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+                <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;-|&gt;&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
+    <span class="n">ax0</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    
+    <span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xys_plot</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xys_plot</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13346,10 +13320,10 @@ var element = $('#eacb805d-1485-42b4-8bbe-efa1535b5a1e');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">anim</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="n">epochs</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">fps</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">anim_gd</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">step_gd</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="n">epochs</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">fps</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13359,11 +13333,11 @@ var element = $('#eacb805d-1485-42b4-8bbe-efa1535b5a1e');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># HTML(anim.to_html5_video())</span>
-<span class="n">anim</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;gd.mp4&#39;</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="n">writer</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># HTML(anim_gd.to_html5_video())</span>
+<span class="n">anim_gd</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;gd.mp4&#39;</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="n">writer</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13399,10 +13373,11 @@ var element = $('#eacb805d-1485-42b4-8bbe-efa1535b5a1e');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lr</span> <span class="o">=</span> <span class="mf">0.01</span>                                                <span class="c1"># learning rate</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="n">lr</span> <span class="o">=</span> <span class="mf">0.01</span>                                                <span class="c1"># learning rate</span>
 
 <span class="n">xys</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>     <span class="c1"># initialise starting point of search for minima, another possible starting position np.array([0.1, 1.4])</span>
 
@@ -13419,11 +13394,11 @@ var element = $('#eacb805d-1485-42b4-8bbe-efa1535b5a1e');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">step_gdm</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-    <span class="k">global</span> <span class="n">dy_dx_new_gdm</span><span class="p">,</span> <span class="n">dy_dx_current_gdm</span><span class="p">,</span> <span class="n">xys</span><span class="p">,</span> <span class="n">lr</span><span class="p">,</span> <span class="n">new_z</span><span class="p">,</span> <span class="n">ax</span>
+    <span class="k">global</span> <span class="n">dy_dx_new_gdm</span><span class="p">,</span> <span class="n">dy_dx_current_gdm</span><span class="p">,</span> <span class="n">xys</span><span class="p">,</span> <span class="n">lr</span><span class="p">,</span> <span class="n">new_z</span><span class="p">,</span> <span class="n">ax0</span><span class="p">,</span> <span class="n">ax1</span>
     <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="c1"># initialise starting point of search for minima, another possible starting position np.array([0.1, 1.4])</span>
         <span class="n">xys</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -13444,11 +13419,13 @@ var element = $('#eacb805d-1485-42b4-8bbe-efa1535b5a1e');
     <span class="n">dy_dx_current_gdm</span> <span class="o">=</span> <span class="n">xys</span><span class="o">.</span><span class="n">grad</span>
     
     <span class="n">xys_plot</span> <span class="o">=</span> <span class="n">xys</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xys_plot</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xys_plot</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">new_z</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">ax0</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xys_plot</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xys_plot</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">new_z</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">Arrow3D</span><span class="p">([</span><span class="n">cache_pt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xys_plot</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">cache_pt</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">xys_plot</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
                 <span class="p">[</span><span class="n">cache_pt</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">new_z</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()],</span> <span class="n">mutation_scale</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-                <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;-|&gt;&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;g&quot;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+                <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;-|&gt;&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
+    <span class="n">ax0</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    
+    <span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xys_plot</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xys_plot</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13458,10 +13435,10 @@ var element = $('#eacb805d-1485-42b4-8bbe-efa1535b5a1e');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">anim</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">step_gdm</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="n">epochs</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">fps</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">anim_gdm</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">step_gdm</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="n">epochs</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">fps</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13471,11 +13448,11 @@ var element = $('#eacb805d-1485-42b4-8bbe-efa1535b5a1e');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># HTML(anim.to_html5_video())</span>
-<span class="n">anim</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;momentum.mp4&#39;</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="n">writer</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># HTML(anim_gdm.to_html5_video())</span>
+<span class="n">anim_gdm</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;momentum.mp4&#39;</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="n">writer</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13511,10 +13488,11 @@ var element = $('#eacb805d-1485-42b4-8bbe-efa1535b5a1e');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rmsprop_lr</span> <span class="o">=</span> <span class="mf">0.01</span>                                           <span class="c1"># learning rate</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <span class="mi">150</span>
+<span class="n">rmsprop_lr</span> <span class="o">=</span> <span class="mf">0.01</span>                                           <span class="c1"># learning rate</span>
 
 <span class="n">xys</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>        <span class="c1"># initialise starting point of search for minima, another possible starting position np.array([0.1, 1.4])</span>
 
@@ -13532,11 +13510,11 @@ var element = $('#eacb805d-1485-42b4-8bbe-efa1535b5a1e');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">step_rmsprop</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-    <span class="k">global</span> <span class="n">dy_dx_new_rmsprop</span><span class="p">,</span> <span class="n">dy_dx_current_rmsprop</span><span class="p">,</span> <span class="n">xys</span><span class="p">,</span> <span class="n">rmsprop_lr</span><span class="p">,</span> <span class="n">new_z</span><span class="p">,</span> <span class="n">ax</span>
+    <span class="k">global</span> <span class="n">dy_dx_new_rmsprop</span><span class="p">,</span> <span class="n">dy_dx_current_rmsprop</span><span class="p">,</span> <span class="n">xys</span><span class="p">,</span> <span class="n">rmsprop_lr</span><span class="p">,</span> <span class="n">new_z</span><span class="p">,</span> <span class="n">ax0</span><span class="p">,</span> <span class="n">ax1</span>
     <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="c1"># initialise starting point of search for minima, another possible starting position np.array([0.1, 1.4])</span>
         <span class="n">xys</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -13556,11 +13534,13 @@ var element = $('#eacb805d-1485-42b4-8bbe-efa1535b5a1e');
     <span class="n">dy_dx_current_rmsprop</span> <span class="o">=</span> <span class="n">xys</span><span class="o">.</span><span class="n">grad</span>
     
     <span class="n">xys_plot</span> <span class="o">=</span> <span class="n">xys</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xys_plot</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xys_plot</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">new_z</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">ax0</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xys_plot</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xys_plot</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">new_z</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">Arrow3D</span><span class="p">([</span><span class="n">cache_pt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xys_plot</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">cache_pt</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">xys_plot</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
                 <span class="p">[</span><span class="n">cache_pt</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">new_z</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()],</span> <span class="n">mutation_scale</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-                <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;-|&gt;&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+                <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;-|&gt;&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
+    <span class="n">ax0</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    
+    <span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xys_plot</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xys_plot</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13570,10 +13550,10 @@ var element = $('#eacb805d-1485-42b4-8bbe-efa1535b5a1e');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">anim</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">step_rmsprop</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="n">epochs</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">fps</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">anim_rmsprop</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">step_rmsprop</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="n">epochs</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">fps</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13583,11 +13563,11 @@ var element = $('#eacb805d-1485-42b4-8bbe-efa1535b5a1e');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># HTML(anim.to_html5_video())</span>
-<span class="n">anim</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;rmsprop.mp4&#39;</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="n">writer</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># HTML(anim_rmsprop.to_html5_video())</span>
+<span class="n">anim_rmsprop</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;rmsprop.mp4&#39;</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="n">writer</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13636,10 +13616,11 @@ var element = $('#eacb805d-1485-42b4-8bbe-efa1535b5a1e');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">adam_lr</span> <span class="o">=</span> <span class="mf">0.01</span>                                           <span class="c1"># learning rate</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">epochs</span> <span class="o">=</span> <span class="mi">240</span>
+<span class="n">adam_lr</span> <span class="o">=</span> <span class="mf">0.01</span>                                           <span class="c1"># learning rate</span>
 
 <span class="n">xys</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>     <span class="c1"># initialise starting point of search for minima, another possible starting position np.array([0.1, 1.4])</span>
 
@@ -13658,11 +13639,11 @@ var element = $('#eacb805d-1485-42b4-8bbe-efa1535b5a1e');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">step_adam</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-    <span class="k">global</span> <span class="n">dy_dx_current_mom</span><span class="p">,</span> <span class="n">dy_dx_current_rmsprop</span><span class="p">,</span> <span class="n">dy_dx_new</span><span class="p">,</span> <span class="n">xys</span><span class="p">,</span> <span class="n">adam_lr</span><span class="p">,</span> <span class="n">new_z</span><span class="p">,</span> <span class="n">ax</span>
+    <span class="k">global</span> <span class="n">dy_dx_current_mom</span><span class="p">,</span> <span class="n">dy_dx_current_rmsprop</span><span class="p">,</span> <span class="n">dy_dx_new</span><span class="p">,</span> <span class="n">xys</span><span class="p">,</span> <span class="n">adam_lr</span><span class="p">,</span> <span class="n">new_z</span><span class="p">,</span> <span class="n">ax0</span><span class="p">,</span> <span class="n">ax1</span>
     <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="c1"># initialise starting point of search for minima, another possible starting position np.array([0.1, 1.4])</span>
         <span class="n">xys</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -13684,11 +13665,13 @@ var element = $('#eacb805d-1485-42b4-8bbe-efa1535b5a1e');
     <span class="n">dy_dx_new</span> <span class="o">=</span> <span class="n">xys</span><span class="o">.</span><span class="n">grad</span>
     
     <span class="n">xys_plot</span> <span class="o">=</span> <span class="n">xys</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xys_plot</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xys_plot</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">new_z</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">ax0</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xys_plot</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xys_plot</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">new_z</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">Arrow3D</span><span class="p">([</span><span class="n">cache_pt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xys_plot</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">cache_pt</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">xys_plot</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
                 <span class="p">[</span><span class="n">cache_pt</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">new_z</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()],</span> <span class="n">mutation_scale</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-                <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;-|&gt;&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;c&quot;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+                <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">arrowstyle</span><span class="o">=</span><span class="s2">&quot;-|&gt;&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
+    <span class="n">ax0</span><span class="o">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    
+    <span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xys_plot</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xys_plot</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13698,10 +13681,10 @@ var element = $('#eacb805d-1485-42b4-8bbe-efa1535b5a1e');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">anim</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">step_adam</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="n">epochs</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">fps</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">anim_adam</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">step_adam</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="n">epochs</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">fps</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13711,11 +13694,11 @@ var element = $('#eacb805d-1485-42b4-8bbe-efa1535b5a1e');
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># HTML(anim.to_html5_video())</span>
-<span class="n">anim</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;adam.mp4&#39;</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="n">writer</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># HTML(anim_adam.to_html5_video())</span>
+<span class="n">anim_adam</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;adam.mp4&#39;</span><span class="p">,</span> <span class="n">writer</span><span class="o">=</span><span class="n">writer</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13733,7 +13716,7 @@ var element = $('#eacb805d-1485-42b4-8bbe-efa1535b5a1e');
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Results">Results<a class="anchor-link" href="#Results">&#182;</a></h2><p>We see that all the algorithms find the minimas but take significatnly different paths. While Vanilla gradient descent and gradient descent with momentum find the minima faster compared to RMSprop and Adam, Other studies have proven Adam to be more stable and this tability allows to use higher learning rates as compared to the same learning rates used here.</p>
+<h2 id="Results">Results<a class="anchor-link" href="#Results">&#182;</a></h2><p>We see that all the algorithms find the minimas but take significatnly different paths. While Vanilla gradient descent and gradient descent with momentum find the minima faster compared to RMSprop and Adam here for the same learning rate, studies have proven Adam to be more stable and this ability allows to use higher learning rates as compared to the same learning rates used here.</p>
 
 </div>
 </div>

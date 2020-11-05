@@ -1,3 +1,13 @@
+---
+layout: post
+title: Machine learning Optimization Algorithms
+subtitle: Visualizing and simple implementations of some optimization algorithms commonly used in Machine Learning
+thumbnail-img: /assets/img/optimization_algorithms/error_terrain.png
+share-img: /assets/img/optimization_algorithms/error_terrain.png
+comments: true
+tags: [python, machine learning, deep learning, optimization algorithms, pytorch]
+---
+
 ## Optimization algorithms using pytorch
 
 ## Optimization algorithms
